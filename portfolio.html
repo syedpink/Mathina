@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/portfolio.css">
+<title>Portfolio</title>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div><strong>Portfolio</strong></div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <span class="toggle" onclick="toggleMode()">🌙</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <h1>Mathina Begum</h1>
+    <p>Front-End Developer</p>
+    <a href="https://github.com/syedpink" class="btn">View Projects</a>
+    <a href="Mathina.pdf" class="btn" download>Resume</a>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="left">
+  <h2>About Me</h2>
+  <div class="card">
+    <p> I am a passionate front-end developer focused on building modern,
+        responsive, and interactive web interfaces with clean UI.I turn ideas 
+        into interactive web experiences.  As a Front-End Developer, I focus on clean design,
+         smooth animations,and responsive layouts using modern web technologies.</p>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="bottom">
+  <h2>Skills</h2>
+  <div class="skills">
+    <div class="skill">HTML5</div>
+    <div class="skill">CSS3</div>
+    <div class="skill">JavaScript</div>
+    <div class="skill">React</div>
+    <div class="skill">MySQL</div>
+    <div class="skill">GitHub</div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="right">
+  <h2>Projects</h2>
+  <div class="card project">
+   <h3>Unislink website</h3>
+      <p>Unislink Medicine is a responsive healthcare website that provides easy access to verified medicine information through a clean and user-friendly interface.</p>
+      <a href="#">GitHub</a> | <a href="unislink.html">Live Demo</a>
+  </div>
+
+  <div class="card project">
+    <h3>To-Do List </h3>
+      <p>JavaScript-based task management.</p>
+      <a href="#">GitHub</a> | <a href="todo.html">Live Demo</a>
+  </div>
+
+   <div class="card project">
+    <h3>Calculator App</h3>
+      <p>Simple calculator using HTML, CSS, and JavaScript.</p>
+      <a href="#">GitHub</a> | <a href="calculator.html">Live Demo</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="bottom">
+  <h2>Contact</h2>
+  <div class="card contact">
+    <p>Email: syedshaina20@gmail.com</p>
+    <p><a href="https://www.linkedin.com/in/mathina-begum-i-865372291">LinkedIn</a> | <a href="https://github.com/syedpink">GitHub</a></p>
+  </div>
+</section>
+
+<button id="topBtn" onclick="scrollTopPage()">⬆</button>
+
+<script>
+/* DARK MODE */
+function toggleMode(){
+  document.body.classList.toggle("light");
+}
+
+/* SCROLL ANIMATION */
+const sections=document.querySelectorAll(".left,.right,.bottom");
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+},{threshold:.2});
+sections.forEach(s=>observer.observe(s));
+
+/* SCROLL TOP */
+window.onscroll=()=>{
+  document.getElementById("topBtn").style.display=
+    window.scrollY>300?"block":"none";
+}
+function scrollTopPage(){
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+</script>
+
+</body>
+</html>
