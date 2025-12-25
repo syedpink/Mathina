@@ -25,7 +25,7 @@
       color: #ffff;
       /* caret-color: transparent; */
     }
-    input:focus{
+    input:focus {
       outline: 0;
       box-shadow: none;
     }
@@ -95,15 +95,14 @@
       </div>
     </div>
   </body>
- 
+
   <script>
-    function bluring(){
-      let button = document.getElementById('display')
-      button.addEventListener('click',()=>{
-      button.blur();
+    function bluring() {
+      let button = document.getElementById("display");
+      button.addEventListener("click", () => {
+        button.blur();
       });
     }
-
 
     function appendToDisplay(input) {
       display.value += input;
@@ -118,9 +117,8 @@
         display.value = "Error";
       }
     }
-    function erase(){
-        display.value = display.value.length - 1;
+    function erase() {
+      display.value = display.value.length - 1;
     }
-    
   </script>
 </html>
